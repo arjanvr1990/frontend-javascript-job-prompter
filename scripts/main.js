@@ -71,4 +71,79 @@ const departments = {
     }
 }
 
-console.log(departments);
+// console.log(departments);
+//
+// console.log("De afdeling Sales heeft " + departments.sales.numberOfEmployees + " medewerkers!!")
+//
+// console.log("Marketing is een leuke afdeling om te werken." + departments.marketing.description)
+//
+// console.log("De afdeling Customer Service heeft " + departments["customer-service"].numberOfEmployees + " medewerkers." )
+//
+// console.log("Sales is een uitdagende afdeling om te werken als Verkoopmanager. " + departments.sales.jobs[1].title[1])
+//
+
+// BESLISSING STRUCTUUR//
+// const departmentChoice = prompt("Over welke afdeling wil je meer informatie?");
+//
+// if (departmentChoice === "marketing") {
+//     console.log(departmentChoice + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[departmentChoice].numberOfEmployees + " medewerkers.");
+// } else if (departmentChoice === "sales") {
+//     console.log(departmentChoice + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[departmentChoice].numberOfEmployees + " medewerkers.");
+// } else if (departmentChoice === "customer-service") {
+//     console.log(departmentChoice + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[departmentChoice].numberOfEmployees + " medewerkers.");
+// } else {
+//     console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+// }
+
+
+
+
+// BESLISSING STRUCTUUR//
+// const selectedJob = prompt("Je koos " + departmentChoice + " Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in." +
+// "\n0: " + departments[departmentChoice].jobs[0].title +
+// "\n1: " + departments[departmentChoice].jobs[1].title +
+// "\n2: " + departments[departmentChoice].jobs[2].title +
+// "\n3: " + departments[departmentChoice].jobs[3].title);
+//
+// if (selectedJob >= 0 && selectedJob<= 3) {
+//     const selectedJobChoise = departments[departmentChoice].jobs[selectedJob];
+//     console.log("je koos " + selectedJobChoise.title + ". Een uitdagende rol! " + selectedJobChoise.description);
+// } else {
+//     console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.")
+// }
+
+
+//SWITCH Variant//
+const departmentChoice = prompt("Over welke afdeling wil je meer informatie?");
+switch (departmentChoice) {
+    case "marketing":
+    case "sales":
+    case "customer-service":
+
+    console.log(departmentChoice + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[departmentChoice].numberOfEmployees + " medewerkers.");
+break;
+    default:
+    console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+break;
+}
+
+//SWITCH Variant//
+const selectedJob = prompt("Je koos " + departmentChoice + " Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in." +
+    "\n0: " + departments[departmentChoice].jobs[0].title +
+    "\n1: " + departments[departmentChoice].jobs[1].title +
+    "\n2: " + departments[departmentChoice].jobs[2].title +
+    "\n3: " + departments[departmentChoice].jobs[3].title);
+
+switch (selectedJob) {
+    case "0":
+    case "1":
+    case "2":
+    case "3":
+    const selectedJobChoise = departments[departmentChoice].jobs[selectedJob];
+    console.log("je koos " + selectedJobChoise.title + ". Een uitdagende rol! " + selectedJobChoise.description);
+break;
+    default:
+    console.error ("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+break;
+}
+
