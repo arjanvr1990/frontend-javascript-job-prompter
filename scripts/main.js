@@ -121,8 +121,10 @@ switch (departmentChoice) {
     case "customer-service":
 
     console.log(departmentChoice + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[departmentChoice].numberOfEmployees + " medewerkers.");
-break
+break;
+    default:
     console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+break;
 }
 
 //SWITCH Variant//
@@ -140,6 +142,8 @@ switch (selectedJob) {
     const selectedJobChoise = departments[departmentChoice].jobs[selectedJob];
     console.log("je koos " + selectedJobChoise.title + ". Een uitdagende rol! " + selectedJobChoise.description);
 break;
-    console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.")
+    default:
+    console.error ("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+break;
 }
 
