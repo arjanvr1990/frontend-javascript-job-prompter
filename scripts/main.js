@@ -81,29 +81,65 @@ const departments = {
 //
 // console.log("Sales is een uitdagende afdeling om te werken als Verkoopmanager. " + departments.sales.jobs[1].title[1])
 //
-// const userInput = prompt("Over welke afdeling wil je meer informatie?");
+
+// BESLISSING STRUCTUUR//
+// const departmentChoice = prompt("Over welke afdeling wil je meer informatie?");
 //
-// if (userInput === "marketing") {
-//     console.log("je koos " + "marketing" + ". " + departments.marketing.description);
-// } else if (userInput === "sales") {
-//     console.log("je koos " + "sales" + ". " + departments.sales.description);
-// } else if (userInput === "customer-service") {
-//     console.log("je koos " + "customer-service" + ". " + departments["customer-service"].description);
+// if (departmentChoice === "marketing") {
+//     console.log(departmentChoice + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[departmentChoice].numberOfEmployees + " medewerkers.");
+// } else if (departmentChoice === "sales") {
+//     console.log(departmentChoice + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[departmentChoice].numberOfEmployees + " medewerkers.");
+// } else if (departmentChoice === "customer-service") {
+//     console.log(departmentChoice + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[departmentChoice].numberOfEmployees + " medewerkers.");
 // } else {
 //     console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
 // }
 
 
-const userInput = prompt("Je koos marketing. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in." +
-"\n0: " + departments.marketing.jobs[0].title +
-"\n1: " + departments.marketing.jobs[1].title +
-"\n2: " + departments.marketing.jobs[2].title +
-"\n3: " + departments.marketing.jobs[3].title);
 
-if (userInput >= 0 && userInput <= 3) {
-    const selectedJob = departments.marketing.jobs[userInput];
-    console.log("je koos " + selectedJob.title + ". Een uitdagende rol! " + selectedJob.description)
-} else {
+
+// BESLISSING STRUCTUUR//
+// const selectedJob = prompt("Je koos " + departmentChoice + " Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in." +
+// "\n0: " + departments[departmentChoice].jobs[0].title +
+// "\n1: " + departments[departmentChoice].jobs[1].title +
+// "\n2: " + departments[departmentChoice].jobs[2].title +
+// "\n3: " + departments[departmentChoice].jobs[3].title);
+//
+// if (selectedJob >= 0 && selectedJob<= 3) {
+//     const selectedJobChoise = departments[departmentChoice].jobs[selectedJob];
+//     console.log("je koos " + selectedJobChoise.title + ". Een uitdagende rol! " + selectedJobChoise.description);
+// } else {
+//     console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.")
+// }
+
+
+//SWITCH Variant//
+const departmentChoice = prompt("Over welke afdeling wil je meer informatie?");
+switch (departmentChoice) {
+    case "marketing":
+    case "sales":
+    case "customer-service":
+
+    console.log(departmentChoice + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[departmentChoice].numberOfEmployees + " medewerkers.");
+break
+    console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+}
+
+//SWITCH Variant//
+const selectedJob = prompt("Je koos " + departmentChoice + " Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in." +
+    "\n0: " + departments[departmentChoice].jobs[0].title +
+    "\n1: " + departments[departmentChoice].jobs[1].title +
+    "\n2: " + departments[departmentChoice].jobs[2].title +
+    "\n3: " + departments[departmentChoice].jobs[3].title);
+
+switch (selectedJob) {
+    case "0":
+    case "1":
+    case "2":
+    case "3":
+    const selectedJobChoise = departments[departmentChoice].jobs[selectedJob];
+    console.log("je koos " + selectedJobChoise.title + ". Een uitdagende rol! " + selectedJobChoise.description);
+break;
     console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.")
 }
 
